@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Ouroboros",
+  "description": "TOS Helper",
+  "version": "1.0.0",
+  "icon": {"128": "ouroboros_128.jpg"},
+  "browser_action": {
+    "default_icon": "ouroboros.jpg",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab"]
+}
