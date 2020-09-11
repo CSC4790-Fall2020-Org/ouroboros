@@ -1,3 +1,2 @@
- chrome.runtime.onInstalled.addListener(function() {
-   alert("I'm On");
-  });
+$("p:contains('data')").css( "background-color", "#FFFF00" );
+alert("finished");

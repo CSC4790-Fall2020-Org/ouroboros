@@ -1,12 +1,12 @@
 function doIt() {
   alert("SUP BRITCHES");
 }
-function buttonTask() {
+function awesomeTask() {
   doIt();
 }
 
 function clickHandler(e) {
-  setTimeout(buttonTask, 0);
+  setTimeout(awesomeTask, 0);
 }
 
 function main() {
@@ -14,11 +14,7 @@ function main() {
 }
 
 
-$(document).ready(function() {
-  $("button").click(function() {
-    var sloth = $(this).attr('src');
-    var script = 'var form = document.activeElement;' +
-      + 'form.value = (form.value + " ' + sloth + '");';
-    chrome.tabs.executeScript({code : script});
-  });
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('button').addEventListener('click', clickHandler);
+  main();
 });

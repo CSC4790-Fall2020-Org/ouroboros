@@ -4,10 +4,13 @@
   "description": "TOS Helper",
   "version": "1.0.0",
   "icon": {"128": "ouroboros_128.jpg"},
-  "background": {
-    "scripts": [ "background.js"],
-    "persistent": false
-  },
+  "background_page": "background.html",
+  "content_scripts": [
+    {
+      "js": [ "jquery-3.5.1.min.js", "background.js" ],
+      "matches": [ "https://twitter.com/en/privacy"]
+    }
+  ],
   "browser_action": {
     "default_icon": "ouroboros.jpg",
     "default_popup": "popup.html"
