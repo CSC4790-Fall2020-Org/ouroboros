@@ -1,5 +1,5 @@
 function doIt() {
-  alert("SUP BRITCHES");
+  alert("Look out for these key words in this TOS:\nData, Location, Personal information");
 }
 function awesomeTask() {
   doIt();
