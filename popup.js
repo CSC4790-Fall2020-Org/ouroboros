@@ -1,5 +1,5 @@
 function doIt() {
-  alert("Look out for these key words in this TOS:\nData, Location, Personal information");
+  alert("Ouroboros is now scanning the page\nWe've highlighted instances of \"data,\" \"person-,\" and \"priv-\"");
 }
 function awesomeTask() {
   doIt();

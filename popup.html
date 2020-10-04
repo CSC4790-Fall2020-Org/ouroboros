@@ -67,15 +67,14 @@
 
       button {
         align-items: center;
-        justify-content: center
+		justify-content: center
         padding: 30px 30px;
         background-color: #4CAF50;
         color: white;
         border-radius: 4px;
         font-size: 20px;
-        display: center;
+        display: inline;
         text-align: center;
-
 
       }
       h1 {
@@ -107,8 +106,11 @@
       }
 
       .modal-icons {
-        height: 50px;
+	    position: relative;
+        height: 100px;
         width: 100%;
+		display: inline-block;
+		text-align: center;
       }
 
       .logo {
@@ -129,6 +131,7 @@
         display: flex;
         justify-content: space-between;
         padding: 10px 22px;
+		
       }
 
       .flex {
@@ -157,17 +160,21 @@
       </h1>
     </div>
     <div class="modal-content">
-      <p>The tool to help you easily read through TOS pages!</p>
+      <p>
+	    The tool to help you easily read through ToS pages!<br>
+	    <br><b>To begin:</b>
+		<br>1. Navigate to a <u>Terms of Service</u> page
+		<br>2. Click the start button<br>
+      </p>
+	  <p>
+        <button class="button">Begin</button>
+      </p>
     </div>
     <div class="modal-icons">
+	  <p align="left" padding-bottom="-50px">Compare to other popular services that collect data!</p>
       <div class="flex-container">
         <div class="flex">
-          <a href="https://www.tiktok.com/legal/terms-of-use?lang=en" target="_blank">
-            <i class="fa iconify" data-icon="simple-icons:tiktok" data-inline="false" style = "color:black"></i>
-          </a>
-        </div>
-        <div class="flex">
-          <a href="https://www.youtube.com/traversymedia" target="_blank">
+          <a href="https://www.youtube.com/static?template=terms" target="_blank">
             <i class="fa fa-youtube" style="color:red "></i>
           </a>
         </div>
@@ -182,17 +189,14 @@
           </a>
         </div>
         <div class="flex">
-          <a href="https://policies.google.com/terms?hl=en-US" target="_blank">
-            <i class="fa fa-google" style="color:grey "></i>
+          <a href="https://www.snap.com/en-US/terms" target="_blank">
+            <i class="fa fa-snapchat" style="color:#262626 "></i>
           </a>
         </div>
 
       </div>
     </div>
-    <p>
-
-      <button class="button">Begin</button>
-    </p>
+	
     <script src="popup.js">
 
     </script>
