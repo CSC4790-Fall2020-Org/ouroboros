@@ -1,5 +1,5 @@
 function doIt() {
-  alert("Ouroboros is now scanning the page\nWe've highlighted instances of \"data,\" \"person-,\" and \"priv-\"");
+  alert("Ouroboros has scanned the page\nWe've highlighted instances of \"data,\" \"person-,\" and \"priv-\"");
 }
 function awesomeTask() {
   doIt();
