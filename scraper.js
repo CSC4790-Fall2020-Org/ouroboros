@@ -1,9 +1,7 @@
 const puppeteer = require('puppeteer');
 
 
-  getTopNWords('https://twitter.com/en/privacy',5);
-  //getTopNWords('https://www.facebook.com/help/instagram/196883487377501',10);
-  //getTopNWords('https://www.snap.com/en-US/privacy/privacy-policy',10);
+  getTopNWords(window.location.href,5);
 
   async function getTopNWords(url,n)
   {

@@ -8,7 +8,7 @@
   "content_scripts": [
     {
       "js": [ "jquery-3.5.1.min.js", "background.js" ],
-      "matches": [ "https://twitter.com/en/privacy"]
+      "matches": [ windown.location.href ]
     }
   ],
   "browser_action": {
