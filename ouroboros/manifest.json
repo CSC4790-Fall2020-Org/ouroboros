@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Ouroboros",
+  "description": "TOS Helper",
+  "version": "1.0.1",
+  "icon": {"128": "ouroboros_128.jpg"},
+  "background_page": "background.html",
+  "content_scripts": [
+    {
+      "js": [ "jquery-3.5.1.min.js","jquery.mark.min.js", "background.js" ],
+      "matches": [ "https://*/*"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "ouroboros.jpg",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["tabs", "<all_urls>"]
+}
