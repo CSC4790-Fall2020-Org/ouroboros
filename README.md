@@ -1,5 +1,5 @@
 # Ouroboros
-Ouroboros is a Chrome browser plugin that helps you identify what data companies collect on you via their terms and conditions page.
+
 ## Installation
 1) Download this repository by clicking the green "Code" button and selecting "Download ZIP"
 2) Open the ZIP and move the ouroboros-master folder anywhere on your computer for easy access 
@@ -15,8 +15,9 @@ Stay tuned for future updates and be sure to check back frequently.
 ## Contributing
 The Ouroboros team is not currently looking for additional contributors. However, we welcome any and all feed back from users
 If you have any ideas about functionality or have any bugs to report, please contact us at orobourosdevteam@gmail.com
+If you would like to become a tester of this plugin please email the above email as well.
 ## Authors
 Our excellent development team is composed of 
 Connor Farrell, Steven Coutts, and Michael Norce
 ### Verion
-0.3 Pre-Alpha
+0.3 Alpha
