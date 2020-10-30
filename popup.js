@@ -28,6 +28,7 @@ function scrapeThePage() {
               || word == "location"|| word == "sell" || word == "private" || word == "payment"
               || word == "access"|| word == "sell" || word == "private" || word == "payment"){
                   wordList.push([word, words[word]]);
+                  //word.css
               }
           }
         }
