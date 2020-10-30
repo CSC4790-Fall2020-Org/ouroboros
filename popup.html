@@ -1,27 +1,5 @@
-<!--<!doctype html>
-<html>
-<head>
-    <style> .button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    }
-    </style>
-    <title>Ouroboros</title>
-    <script src="popup.js"></script>
-    <script src="jquery-3.5.1.min.js"></script>
-    <script src="scraper.js"></script>
-</head>
-  <body>
+<!--Main HTML of Ouroboros Popup-->
 
-    <button class="button">Begin</button>
-  </body>
-</html>
--->
 <!DOCTYPE html>
 <html>
   <head>
@@ -39,10 +17,9 @@
     />
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script src="popup.js"></script>
-    <script src="jquery-3.5.1.min.js"></script>
-    <script src="scraper.js"></script>
+    <script type="text/javascript" src="chrome-extension-async.js"></script>
+
     <style>
-      /* Modal Structure */
 
       html,
       body {
@@ -66,8 +43,9 @@
       }
 
       button {
+        font-family: "Open Sans", sans-serif;
         align-items: center;
-		justify-content: center
+		    justify-content: center
         padding: 30px 30px;
         background-color: #4CAF50;
         color: white;
@@ -76,6 +54,9 @@
         display: inline;
         text-align: center;
 
+      }
+      .center-button{
+        left:50%;
       }
       h1 {
         font-family: "Menlo", monospace;
@@ -109,8 +90,8 @@
 	    position: relative;
         height: 100px;
         width: 100%;
-		display: inline-block;
-		text-align: center;
+	  	  display: inline-block;
+		    text-align: center;
       }
 
       .logo {
@@ -149,14 +130,13 @@
         color: #2f5876;
       }
     </style>
-    <!--<script src="popup.js"></script>-->
   </head>
 
   <body>
     <div class="modal-header">
       <h1 class="logo">
         <img class="logo-icon" src="images/ouroboros.jpg" />Ouroboros
-        <span class="version">(1.0.0)</span>
+        <span class="version">(1.0.1)</span>
       </h1>
     </div>
     <div class="modal-content">
@@ -164,14 +144,16 @@
 	    The tool to help you easily read through ToS pages!<br>
 	    <br><b>To begin:</b>
 		<br>1. Navigate to a <u>Terms of Service</u> page
-		<br>2. Click the start button<br>
+		<br>2. Click the begin button below to see top keywords to look out for!<br>
       </p>
-	  <p>
-        <button class="button">Begin</button>
+	    <p class= "center-button">
+
+        <button value="Begin" id ="check-1" class="button">Begin</button>
+        
       </p>
     </div>
     <div class="modal-icons">
-	  <p align="left" padding-bottom="-25px">Compare to other popular services that collect data!</p>
+	  <p align-items ="left" padding-bottom="-25px">Compare to other popular services that collect data!</p>
   <!--<p align="left" padding-bottom="-25px">Here are the top keywords we found on the page:<script>getTopNWords();</script></p>-->
 
       <div class="flex-container">
@@ -197,10 +179,6 @@
         </div>
 
       </div>
-    </div>
-
-    <script src="popup.js">
-
-    </script>
+    </div>  
   </body>
 </html>
