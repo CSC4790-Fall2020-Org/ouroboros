@@ -24,7 +24,9 @@ function scrapeThePage() {
         if(word !=="false" && word !=="quot"){
           if (words.hasOwnProperty(word)) 
           {
-              if (word = "data"){
+              if (word == "data" || word == "privacy" || word == "personal"
+              || word == "location"|| word == "sell" || word == "private" || word == "payment"
+              || word == "access"|| word == "sell" || word == "private" || word == "payment"){
                   wordList.push([word, words[word]]);
               }
           }
@@ -59,25 +61,27 @@ function scrapeThePage() {
     console.log({final});
     return final;
 }
+//Highlight
+function highlight() {
+  $("p:contains('data')").css("background-color","#FFFF00");
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Hook up #check-1 button in popup.html
+ 
   const fbshare = document.querySelector('#check-1');
   fbshare.addEventListener('click', async () => {
       // Get the active tab
       const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
       const tab = tabs[0];
       console.log(tab);
-      // We have to convert the function to a string
+      // Convert function to a string
       const scriptToExec = `(${scrapeThePage})()`;
+      const scriptToExec2 = `(${highlight})()`;
 
-      // Run the script in the context of the tab
+      // Run the script
       const scraped = await chrome.tabs.executeScript(tab.id, { code: scriptToExec });
+      const scraped2 = await chrome.tabs.executeScript(tab.id, { code: scriptToExec2 });
 
-      // Result will be an array of values from the execution
-      // For testing this will be the same as the console output if you ran scriptToExec in the console
-      alert(scraped[0]);
-      //console.log(scraped[0]);
-      //alert(tab);
+      alert("Look out for these key words in this TOS:\n" + scraped[0]);
   });
 });
