@@ -1,3 +1,4 @@
+
 function scrapeThePage() {
   // Gets HTML of current tab
   var htmlCode = document.documentElement.innerHTML;
@@ -18,17 +19,16 @@ function scrapeThePage() {
         }
     }
 
-    var wordList = [];
+    var wordList = []; // this should be the regex to search over but dont know how that changes the search
     for (var word in words)
     {
         if(word !=="false" && word !=="quot"){
-          if (words.hasOwnProperty(word)) 
+          if (words.hasOwnProperty(word))
           {
               if (word == "data" || word == "privacy" || word == "personal"
               || word == "location"|| word == "sell" || word == "private" || word == "payment"
               || word == "access"|| word == "sell" || word == "private" || word == "payment"){
                   wordList.push([word, words[word]]);
-                  //word.css
               }
           }
         }
@@ -62,10 +62,6 @@ function scrapeThePage() {
     console.log({final});
     return final;
 }
-//Highlight
-function highlight() {
-  $("p:contains('data')").css("background-color","#FFFF00");
-}
 
 document.addEventListener('DOMContentLoaded', () => {
  
@@ -75,14 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
       const tab = tabs[0];
       console.log(tab);
-      // Convert function to a string
-      const scriptToExec = `(${scrapeThePage})()`;
-      const scriptToExec2 = `(${highlight})()`;
+      //  Convert function to a string
+     const scriptToExec = `(${scrapeThePage})()`;
 
-      // Run the script
-      const scraped = await chrome.tabs.executeScript(tab.id, { code: scriptToExec });
-      const scraped2 = await chrome.tabs.executeScript(tab.id, { code: scriptToExec2 });
 
-      alert("Look out for these key words in this TOS:\n" + scraped[0]);
+           // Run the script
+           const scraped = await chrome.tabs.executeScript(tab.id, { code: scriptToExec });
+
+
+      alert(scraped[0]);
   });
 });
