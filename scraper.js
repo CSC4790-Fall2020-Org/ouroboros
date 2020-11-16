@@ -9,6 +9,27 @@ const puppeteer = require('puppeteer');
   function getURL() {
     return(window.location.href);
   }
+  function define(toDefine){
+	var defined;
+	if(toDefine.toUpperCase() === "LOCATION")
+	  defined = ", The company will save and use your location\n";
+	else if(toDefine.toUpperCase() === "DATA")
+	  defined = ", The company will keep track of what you've written or posted\n";
+	else if(toDefine.toUpperCase() === "PRIVACY")
+  	  defined = ", The company will not share your information with other users\n";
+	else if(toDefine.toUpperCase() === "THIRD-PARTY")
+	  defined = ", The company will share your information with affiliated third-parties \n";
+	else if(toDefine.toUpperCase() === "SELL")
+	  defined = ", The company will provide your information to other companies in exchange for money or services \n";
+	else if(toDefine.toUpperCase() === "ACCESS")
+	  defined = ", The company reserves the right to go through any documents, photos, or similar materials you have saved \n";
+	else if(toDefine.toUpperCase() === "PERSONAL")
+	  definied = ", The company has access to and can use your personal data and propoerties \n";
+	else if(toDefine.toUpperCase() === "PAYMENT")
+	  defined = ", There are optional purchases the company is keeping track of\n";
+	  
+	return defined;
+  }
   async function getTopNWords(url,n)
   {
     const browser = await puppeteer.launch();
@@ -62,7 +83,7 @@ const puppeteer = require('puppeteer');
       }
 
       for(var i=0;i<topWords.length;i++){
-        topWords[i]= (i+1)+ ". "+topWords[i];
+        topWords[i]= (i+1)+ ". "+topWords[i]+define(topWords[i]);
       }
       var stringOfKeywords = topWords.toString();
       function uppercase(str)
@@ -136,21 +157,7 @@ const puppeteer = require('puppeteer');
 	  
 	  var wordMeanings = [];
 		for(var i=0;i<topWords.length;i++){
-			if(topWords[i].toUpperCase().equals("LOCATION")
-				wordMeanings.push("The company will save and use your location\n");
-			else if(topWords[i].toUpperCase().equals("DATA")
-					wordMeanings.push("The company will keep track of what you've written or posted\n");
-			else if(topWords[i].toUpperCase().equals(PRIVACY)
-					wordMeanings.push("The company\n");
-			else if(topWords[i].toUpperCase().equals(THIRD-PARTY)
-					wordMeanings.push("The company will share your information with affiliated third-parties \n");
-			else if(topWords[i].toUpperCase().equals(SELL:
-					wordMeanings.push("The company will provide your information to other companies in exchange for money or services \n");
-			else if(topWords[i].toUpperCase().equals(ACCESS:
-					wordMeanings.push("The company reserves the right to go through any documents, photos, or similar materials you have saved \n");
-			else if(topWords[i].toUpperCase().equals(PERSONAL:
-					wordMeanings.push("The company has access to and can use your personal data and propoerties \n");
-		}
+			}
 	  
 	  for(var i=0;i<wordMeanings.length;i++){
 		  console.log(wordMeanings[i]);
