@@ -9,6 +9,7 @@ const puppeteer = require('puppeteer');
   function getURL() {
     return(window.location.href);
   }
+  
   function define(toDefine){
 	var defined;
 	if(toDefine.toUpperCase() === "LOCATION")
@@ -30,6 +31,7 @@ const puppeteer = require('puppeteer');
 	  
 	return defined;
   }
+  
   async function getTopNWords(url,n)
   {
     const browser = await puppeteer.launch();
